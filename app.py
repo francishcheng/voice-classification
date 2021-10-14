@@ -77,7 +77,7 @@ def train_():
     train_loader, test_loader = get_dataloader(df, feature_cols, label_cols)
     loss_fn = nn.CrossEntropyLoss()
     optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
-    epochs = 300
+    epochs = 400
     for t in range(epochs):
         print(f"Epoch {t+1}\n-------------------------------")
 
