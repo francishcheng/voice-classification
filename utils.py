@@ -32,8 +32,6 @@ class NeuralNetwork(nn.Module):
 def extract_features(file_name):
     
 
-    # Loads the audio file as a floating point time series and assigns the default sample rate
-    # Sample rate is set to 22050 by default
     X, sample_rate = librosa.load(file_name, res_type='kaiser_fast') 
 
     stft = np.abs(librosa.stft(X))
@@ -58,7 +56,6 @@ def extract_features(file_name):
     sr=sample_rate).T,axis=0)
         
     
-    # We add also the classes of each file as a label at the end
 
     return mfccs, chroma, mel, contrast, tonnetz
 
